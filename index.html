@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra Papel Tesoura</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- font awesome -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.css'
+        integrity='sha512-FA9cIbtlP61W0PRtX36P6CGRy0vZs0C2Uw26Q1cMmj3xwhftftymr0sj8/YeezDnRwL9wtWw8ZwtCiTDXlXGjQ=='
+        crossorigin='anonymous' />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="text-center">
+    <!-- top bar -->
+    <div class="topBar"></div>
+
+    <div class="container">
+        <h1 class="display-1">Pedra Papel Tesoura</h1>
+
+        <div class="row">
+            <div class="col mx-auto">
+                <div id="divPedra" class="col-auto my-5">
+                    <button id="btnPedra" class="botaoPPT boatoEscolha btn btn-danger rounded-circle" value="pedra" onclick="jogar(this.value)">
+                        <i class="fa-regular fa-hand-back-fist"></i>
+                    </button>
+                </div>
+                <div id="divPapel" class="col-auto my-5">
+                    <button id="btnpapel" class="botaoPPT boatoEscolha btn btn-primary rounded-circle" value="papel" onclick="jogar(this.value)">
+                        <i class="fa-regular fa-hand"></i>
+                    </button>
+                </div>
+                <div id="divTesoura" class="col-auto my-5">
+                    <button id="btnTesoura" class="botaoPPT boatoEscolha btn btn-warning rounded-circle" value="tesoura" onclick="jogar(this.value)">
+                        <i class="fa-regular fa-hand-scissors"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="colAdversario" class="col mx-auto">
+                <div id="divAdversario" class="col-auto my-5">
+                    <button id="btnAdversario" class="botaoPPT btn btn-success rounded-circle" value="tesoura">
+                        <i class="fa-regular fa-hand-back-fist"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-cols-1">
+            <div class="col">
+                <h3 id="resultado" class="display-3"></h3>
+            </div>
+            <div class="col">
+                <h2 id="placar" class="display-5"></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto mx-auto">
+                <button id="btnContinuar" class="btn btn-dark fs-5">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <!-- <script src="/script/topBar.js"></script> -->
+    <script src="./main.js"></script>
+</body>
+
+</html>
