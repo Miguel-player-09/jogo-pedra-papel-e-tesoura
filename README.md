@@ -1,3 +1,3 @@
 # pedraPapelTesoura
-
-http://jogos.codigosdakah.com.br/
+ 
+ O jogo original está em http://jogos.codigosdakah.com.br/
