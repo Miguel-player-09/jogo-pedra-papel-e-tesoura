@@ -1,14 +1,17 @@
-const btnPedra = document.getElementById("btnPedra");
-const btnPapel = document.getElementById("btnPapel");
-const btnTesoura = document.getElementById("btnTesoura");
+const botoes = document.getElementsByClassName("botaoEscolha");
+
 const btnAdversario = document.getElementById("btnAdversario");
-
-const divPedra = document.getElementById("divPedra");
-const divPapel = document.getElementById("divPapel");
-const divTesoura = document.getElementById("divTesoura");
 const divAdversario = document.getElementById("divAdversario");
-
 const colAdversario = document.getElementById("colAdversario");
+
+const outResultado = document.getElementById("resultado");
+const outPlacar = document.getElementById("placar");
+
+let placar = Number(localStorage.getItem("placar"));
+if (!placar) {
+    placar = 0;
+}
+escrevePlacar()
 
 objValores = {
     "Pedra": '<i class="fa-regular fa-hand-back-fist"></i>',
@@ -20,7 +23,6 @@ function jogar(valor) {
     let resultado;
     const opcoes = Object.keys(objValores);
     const adversario = opcoes[Math.floor(Math.random() * opcoes.length)];
-    console.log(valor, adversario);
     mostraAdversario(adversario);
     escondeOutrasOpcoes(valor);
     // define vencedor
@@ -47,9 +49,22 @@ function jogar(valor) {
             }
         }
     }
-    console.log(resultado)
-    // escreve placar
-    // desabilita botoes
+    
+    placar += resultado;
+    if (placar < 0){
+        placar = 0;
+    }
+    localStorage.setItem("placar", placar)
+    escrevePlacar();
+    if (resultado === 0) {
+        outResultado.textContent = "Empate";
+    } else if (resultado === 1) {
+        outResultado.textContent = "Vitória!";
+    } else if (resultado === -1) {
+        outResultado.textContent = "Derrota";
+    }
+
+    document.getElementById("botoesControle").style.display = "flex";
 }
 
 function mostraAdversario(opcao) {
@@ -58,5 +73,33 @@ function mostraAdversario(opcao) {
 }
 
 function escondeOutrasOpcoes(opcao) {
+    for (let i = 0; i < botoes.length; i++){
+        const botao = botoes[i];
+        const value = botao.value;
+        if (value === opcao) {
+            botao.disabled = true;
+        } else {
+            botao.parentElement.style.display = 'none'
+        }
+    }
+}
 
+function limpaPlacar() {
+    localStorage.removeItem("placar");
+    escrevePlacar;
+}
+
+function continua() {
+    for (let i = 0; i < botoes.length; i++){
+        const botao = botoes[i];
+        botao.disabled = false;
+        botao.parentElement.style.display = "block";
+    }
+    colAdversario.style.display = "none";
+    document.getElementById("botoesControle").style.display = "none";
+    outResultado.textContent = "";
+}
+
+function escrevePlacar() {
+    outPlacar.textContent = "Placar: " + placar;
 }
