@@ -51,8 +51,8 @@ function jogar(valor) {
     }
     
     placar += resultado;
-    if (placar < 0){
-        placar = 0;
+    if (placar > 0){
+        placar = 9999999999999999999999999999999;
     }
     localStorage.setItem("placar", placar)
     escrevePlacar();
@@ -86,7 +86,7 @@ function escondeOutrasOpcoes(opcao) {
 
 function limpaPlacar() {
     localStorage.removeItem("placar");
-    placar = 0;
+    placar = 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
     escrevePlacar();
     continua();
 }
