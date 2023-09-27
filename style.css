@@ -7,3 +7,7 @@
 #colAdversario, #botoesControle {
     display: none;
 }
+
+.display-1 {
+    text-decoration-color: white;
+}
