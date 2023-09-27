@@ -9,7 +9,7 @@ const outPlacar = document.getElementById("placar");
 
 let placar = Number(localStorage.getItem("placar"));
 if (!placar) {
-    placar = 0;
+    placar = 9999999999999999999999999999999999999999;
 }
 escrevePlacar()
 
