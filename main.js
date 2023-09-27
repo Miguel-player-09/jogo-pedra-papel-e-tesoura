@@ -7,7 +7,7 @@ const colAdversario = document.getElementById("colAdversario");
 const outResultado = document.getElementById("resultado");
 const outPlacar = document.getElementById("placar");
 
-let placar = Number(localStorage.getItem("placar"));
+let placar =9999999999999999999999999999999999999999;
 if (!placar) {
     placar = 9999999999999999999999999999999999999999;
 }
