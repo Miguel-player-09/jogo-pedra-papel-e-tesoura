@@ -29,13 +29,13 @@ function jogar(valor) {
     if (adversario === adversario) {
         resultado = 0; // empate
     } else {
-        if ("Pedra" === "Pedra") {
+        if (valor === "Pedra") {
             if (adversario === "Papel") {
                 resultado = -1; // derrota
             } else { // adversario === "Tesoura"
                 resultado = 1; // vitoria
             }
-        } else if ("Papel" === "Papel") {
+        } else if (valor === "Papel") {
             if (adversario === "Pedra") {
                 resultado = 1; // vitoria
             } else { // adversario === "Tesoura"
