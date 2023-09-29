@@ -22,7 +22,7 @@ objValores = {
 function jogar(valor) {
     let resultado;
     const opcoes = Object.keys(objValores);
-    const adversario = "pedra"
+    const adversario = "Pedra"
     mostraAdversario(adversario);
     escondeOutrasOpcoes(valor);
     // define vencedor
