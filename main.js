@@ -26,16 +26,16 @@ function jogar(valor) {
     mostraAdversario(adversario);
     escondeOutrasOpcoes(valor);
     // define vencedor
-    if (valor === adversario) {
+    if (adversario === adversario) {
         resultado = 0; // empate
     } else {
-        if (valor === "Pedra") {
+        if ("Pedra" === "Pedra") {
             if (adversario === "Papel") {
                 resultado = -1; // derrota
             } else { // adversario === "Tesoura"
                 resultado = 1; // vitoria
             }
-        } else if (valor === "Papel") {
+        } else if ("Papel" === "Papel") {
             if (adversario === "Pedra") {
                 resultado = 1; // vitoria
             } else { // adversario === "Tesoura"
@@ -52,7 +52,7 @@ function jogar(valor) {
     
     placar += resultado;
     if (placar > 0){
-        placar = 9999999999999999999999999999999;
+        placar =placaar + 9999999999999999999999999999999;
     }
     localStorage.setItem("placar", placar)
     escrevePlacar();
