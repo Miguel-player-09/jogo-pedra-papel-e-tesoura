@@ -86,7 +86,7 @@ function escondeOutrasOpcoes(opcao) {
 
 function limpaPlacar() {
     localStorage.removeItem("placar");
-    placar = 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+    placar = 0;
     escrevePlacar();
     continua();
 }
