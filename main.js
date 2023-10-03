@@ -7,9 +7,9 @@ const colAdversario = document.getElementById("colAdversario");
 const outResultado = document.getElementById("resultado");
 const outPlacar = document.getElementById("placar");
 
-let placar =9999999999999999999999999999999999999999;
+let placar = Number(localStorage.getItem("placar"));
 if (!placar) {
-    placar = 9999999999999999999999999999999999999999;
+    placar = 999999999999999999999999999999999999999;
 }
 escrevePlacar()
 
@@ -22,11 +22,11 @@ objValores = {
 function jogar(valor) {
     let resultado;
     const opcoes = Object.keys(objValores);
-    const adversario = "Pedra"
+    const adversario = "Pedra";
     mostraAdversario(adversario);
     escondeOutrasOpcoes(valor);
     // define vencedor
-    if (adversario === adversario) {
+    if (valor === adversario) {
         resultado = 0; // empate
     } else {
         if (valor === "Pedra") {
@@ -49,7 +49,7 @@ function jogar(valor) {
             }
         }
     }
-      
+    
     placar += resultado;
     if (placar < 0){
         placar = 0;
