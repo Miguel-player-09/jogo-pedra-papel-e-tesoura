@@ -49,10 +49,10 @@ function jogar(valor) {
             }
         }
     }
-    
+      
     placar += resultado;
-    if (placar > 0){
-        placar =placaar + 9999999999999999999999999999999;
+    if (placar < 0){
+        placar = 0;
     }
     localStorage.setItem("placar", placar)
     escrevePlacar();
